@@ -1,56 +1,118 @@
 body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  form {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  #outputContainer {
-    padding: 20px;
-  }
-  
-  .paragraph {
-    margin-bottom: 20px;
-  }
-  
-  ul {
-    list-style-type: disc;
-  }
-  
-  p, li {
-    margin-bottom: 10px;
-  }
-  
+  font-family: 'Oswald', sans-serif;
+  background-color: #2C2A4A;
+  color: #fff;
+  font-weight: 300;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1.title {
+  text-align: center;
+  font-weight: 400;
+}
+
+header {
+  padding: 10px;
+}
+/* Nav */
+nav {
+  border-bottom: 1px solid #fff; /* White line under nav */
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px; /* Adjusted padding */
+  font-weight: 300; /* Slimmer font weight for nav links */
+}
+nav ul li a:hover {
+  background-color: #524F73; /* Darker shade on hover */
+}
+
+
+.touch {
+  margin-left: auto; /* Push touch to the right */
+}
+
+.search {
+  margin-right: 0; /* Remove margin-right */
+}
+
+
+input[type="text"] {
+  width: 25%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#outputContainer {
+  padding: 20px;
+}
+
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  grid-gap: 20px; /* Spacing between articles */
+}
+
+.article {
+  background-color: #1E1B3A; /* Darker shade for article background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.article img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article h2 {
+  color: #fff;
+}
+
+.article p {
+  color: #aaa;
+}
+
+.article .hashtags {
+  margin-top: 10px;
+}
+
+.hashtag {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 3px;
+}
+

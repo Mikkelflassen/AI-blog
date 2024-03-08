@@ -3,21 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI</title>
+  <title>Tech Student</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>The best AI for AI information</h1>
+  <header>
+    <h1 class="title">Tech Student</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#programming">Programming</a></li>
+        <li><a href="#blockchain">Blockchain</a></li>
+        <li><a href="#ai">AI</a></li>
+        <li class="search"><a href="#search">Search</a></li>
+        <li class="touch"><a href="#touch">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="input-container">
     <form id="contentForm">
-      <label for="prompt">Enter your prompt:</label><br>
-      <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br>
-      <button type="submit">Generate Content</button>
+      <input type="text" id="prompt" name="prompt" placeholder="Enter your prompt here...">
+      <button type="submit">Generate</button>
     </form>
+  </div>
+
+  <div class="output-container">
     <div id="outputContainer">
-        <!-- Output content will be dynamically inserted here -->
-      </div>
-      
+      <!-- Output content will be dynamically inserted here -->
+    </div>
+  </div>
+
+  <div class="article-container">
+  <div class="article">
+    <img src="image2.jpg" alt="Article Image">
+    <h2>Title of Article 2</h2>
+    <p>Short description of the article content goes here. This could be a summary of the main points or highlights.</p>
+    <div class="hashtags">
+      <span class="hashtag">#Design</span>
+      <span class="hashtag">#UI</span>
+      <span class="hashtag">#UX</span>
+    </div>
+  </div>
+
+  <div class="article">
+    <img src="image3.jpg" alt="Article Image">
+    <h2>Title of Article 3</h2>
+    <p>Short description of the article content goes here. This could be a summary of the main points or highlights.</p>
+    <div class="hashtags">
+      <span class="hashtag">#Blockchain</span>
+      <span class="hashtag">#Cryptocurrency</span>
+      <span class="hashtag">#Finance</span>
+    </div>
+  </div>
+
+  <div class="article">
+    <img src="image4.jpg" alt="Article Image">
+    <h2>Title of Article 4</h2>
+    <p>Short description of the article content goes here. This could be a summary of the main points or highlights.</p>
+    <div class="hashtags">
+      <span class="hashtag">#ArtificialIntelligence</span>
+      <span class="hashtag">#MachineLearning</span>
+      <span class="hashtag">#DataScience</span>
+    </div>
+
+    
   </div>
 
   <script src="script.js"></script>
