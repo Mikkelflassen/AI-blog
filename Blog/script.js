@@ -23,14 +23,15 @@ document.getElementById('contentForm').addEventListener('submit', function(event
     const article = formatArticle(data.choices);
     outputContainer.innerHTML = article;
 
-    // Save the new article to local storage
-    const newArticle = generateNewArticle(data.choices);
-    saveArticleToStorage(newArticle);
+   // Save the new article to local storage
+const newArticle = generateNewArticle(data.choices, promptText);
+saveArticleToStorage(newArticle);
+
 
     // Schedule displaying saved articles after 5 seconds
     setTimeout(() => {
       displaySavedArticles();
-    }, 5000);
+    }, 1000);
   })
   .catch(error => console.error('Error:', error));
 });
@@ -61,15 +62,18 @@ function formatParagraph(content) {
   return paragraph;
 }
 
-function generateNewArticle(choices) {
-  let newArticle = '';
+function generateNewArticle(choices, promptText) {
+  let newArticle = `<h3 class="article-title">${promptText}</h3>`; // Use class "article-title" for styling
   choices.forEach(choice => {
     if (choice.message.role === 'assistant') {
-      newArticle += choice.message.content;
+      newArticle += formatParagraph(choice.message.content);
     }
   });
   return newArticle;
 }
+
+
+
 
 function saveArticleToStorage(article) {
  /*Keyword*/
@@ -358,7 +362,7 @@ function saveArticleToStorage(article) {
     const existingArticles = JSON.parse(localStorage.getItem('articles')) || [];
     // Add the new article to the array
     existingArticles.push(article);
-    // Limit the articles to 15 by removing the oldest ones
+    // Limit the articles to 25 by removing the oldest ones
     if (existingArticles.length > 25) {
       existingArticles.shift(); // Remove the oldest article
     }
@@ -376,21 +380,14 @@ function displaySavedArticles() {
   // Clear the existing articles from the container
   articleContainer.innerHTML = '';
 
-  // Determine the starting index based on the number of articles
-  let startIndex = 0;
-  if (savedArticles.length > 25) {
-    startIndex = savedArticles.length - 25;
-  }
-  
-  // Display the newest 15 articles
-  for (let i = startIndex; i < savedArticles.length; i++) {
+  // Display the newest articles first by iterating backwards through the savedArticles array
+  for (let i = savedArticles.length - 1; i >= 0; i--) {
     const newArticleDiv = document.createElement('div');
     newArticleDiv.classList.add('generated-article'); // Add a class for generated articles
     newArticleDiv.innerHTML = `
-      <h3>New Article Title</h3>
+      
       <p>${savedArticles[i]}</p>
     `;
     articleContainer.appendChild(newArticleDiv);
   }
 }
-
