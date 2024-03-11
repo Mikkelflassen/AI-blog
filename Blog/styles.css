@@ -139,6 +139,7 @@ button:hover {
 .generated-article {
   background-color: #2C2A4A; /* Change background color */
   border: 1px solid #6a6a6a; /* Add border */
+  color:#6a6a6a ;
   padding: 10px; /* Add padding */
   margin-bottom: 20px; /* Add margin */
   /* Add any other specific styling for the generated articles */
