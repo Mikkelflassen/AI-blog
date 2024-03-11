@@ -1,7 +1,7 @@
 body {
   font-family: 'Oswald', sans-serif;
   background-color: #2C2A4A;
-  color: #fff;
+  color: #d6cccc;
   font-weight: 300;
   padding: 20px;
 }
@@ -21,7 +21,7 @@ header {
 }
 /* Nav */
 nav {
-  border-bottom: 1px solid #fff; /* White line under nav */
+  border-bottom: 1px solid #e3dada; /* White line under nav */
 }
 nav ul {
   list-style-type: none;
@@ -36,7 +36,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: rgb(216, 210, 210);
   text-decoration: none;
   padding: 10px 15px; /* Adjusted padding */
   font-weight: 300; /* Slimmer font weight for nav links */
@@ -96,7 +96,7 @@ button:hover {
 }
 
 .static-article h2 {
-  color: #fff;
+  color: #cdc8c8;
 }
 
 .static-article p {
@@ -111,14 +111,14 @@ button:hover {
   display: inline-block;
   padding: 5px 10px;
   margin-right: 5px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #0f4263;
+  color: #d2cbcb;
   border-radius: 3px;
 }
 
 .footer {
-  background-color: #572807; /* Brown background */
-  color: #e5a679; /* Text color */
+  background-color: #141f97; /* Brown background */
+  color: #8a8a8a; /* Text color */
   text-align: center;
   padding: 20px 0;
   margin :20px;
@@ -137,8 +137,8 @@ button:hover {
 /* generated articles*/
 
 .generated-article {
-  background-color: #2C2A4A; /* Change background color */
-  border: 1px solid #5e5d5d; /* Add border */
+  background-color: #2f2b54; /* Change background color */
+  border: 0px solid #5e5d5d; /* Add border */
   color:#6a6a6a ;
   padding: 10px; /* Add padding */
   margin-bottom: 20px; /* Add margin */
