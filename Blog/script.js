@@ -38,9 +38,9 @@ document.getElementById('contentForm').addEventListener('submit', function(event
 function formatArticle(choices) {
   let formattedContent = '';
   choices.forEach(choice => {
-      if (choice.message.role === 'assistant') {
-          formattedContent += formatParagraph(choice.message.content);
-      }
+    if (choice.message.role === 'assistant') {
+      formattedContent += formatParagraph(choice.message.content);
+    }
   });
   return formattedContent;
 }
@@ -49,13 +49,13 @@ function formatParagraph(content) {
   const lines = content.split('\n');
   let paragraph = '<div class="paragraph">';
   lines.forEach(line => {
-      if (line.trim() !== '') {
-          if (line.startsWith('- ')) {
-              paragraph += `<ul><li>${line.substring(2)}</li></ul>`;
-          } else {
-              paragraph += `<p>${line}</p>`;
-          }
+    if (line.trim() !== '') {
+      if (line.startsWith('- ')) {
+        paragraph += `<ul><li>${line.substring(2)}</li></ul>`;
+      } else {
+        paragraph += `<p>${line}</p>`;
       }
+    }
   });
   paragraph += '</div>';
   return paragraph;
@@ -64,44 +64,38 @@ function formatParagraph(content) {
 function generateNewArticle(choices) {
   let newArticle = '';
   choices.forEach(choice => {
-      if (choice.message.role === 'assistant') {
-          newArticle += choice.message.content;
-      }
+    if (choice.message.role === 'assistant') {
+      newArticle += choice.message.content;
+    }
   });
   return newArticle;
 }
 
 function saveArticleToStorage(article) {
-  // Retrieve existing articles from local storage or initialize an empty array
-  const existingArticles = JSON.parse(localStorage.getItem('articles')) || [];
-  // Add the new article to the array
-  existingArticles.push(article);
-  // Store the updated array back in local storage
-  localStorage.setItem('articles', JSON.stringify(existingArticles));
+  const keywords = ["technology", "artificial intelligence", "machine learning,students,tech,AI,programming,js,Javascript,HTML,css,php,java,typescript,chatgpt,student-help,textcorrector,grammar,"]; // Define your keywords
+  const containsKeyword = keywords.some(keyword => article.includes(keyword));
+  if (containsKeyword) {
+    // Retrieve existing articles from local storage or initialize an empty array
+    const existingArticles = JSON.parse(localStorage.getItem('articles')) || [];
+    // Add the new article to the array
+    existingArticles.push(article);
+    // Store the updated array back in local storage
+    localStorage.setItem('articles', JSON.stringify(existingArticles));
+  }
 }
+
 
 function displaySavedArticles() {
-  const articleContainer = document.querySelector('.article-container');
+  const articleContainer = document.querySelector('.generated-articles-container');
   const savedArticles = JSON.parse(localStorage.getItem('articles')) || [];
+  
   savedArticles.forEach(article => {
-      const newArticleDiv = document.createElement('div');
-      newArticleDiv.classList.add('article');
-      newArticleDiv.innerHTML = `<h3>New Article Title</h3><p>${article}</p>`;
-      articleContainer.appendChild(newArticleDiv);
+    const newArticleDiv = document.createElement('div');
+    newArticleDiv.classList.add('generated-article'); // Add a class for generated articles
+    newArticleDiv.innerHTML = `
+      <h3>New Article Title</h3>
+      <p>${article}</p>
+    `;
+    articleContainer.appendChild(newArticleDiv);
   });
-}
-// Event listener to handle article deletion
-document.addEventListener('click', function(event) {
-  if (event.target.classList.contains('delete-btn')) {
-      const index = parseInt(event.target.dataset.index);
-      deleteArticle(index);
-  }
-});
-
-// Function to delete an article by index
-function deleteArticle(index) {
-  let savedArticles = JSON.parse(localStorage.getItem('articles')) || [];
-  savedArticles.splice(index, 1);
-  localStorage.setItem('articles', JSON.stringify(savedArticles));
-  displaySavedArticles();
 }
