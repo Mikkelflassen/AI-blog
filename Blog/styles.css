@@ -51,14 +51,19 @@ nav ul li a:hover {
 }
 
 .search {
-  margin-right: 0; /* Remove margin-right */
+  margin-left: auto; /* Remove margin-right */
 }
 
+.text-container{
+  margin-left:10px;
+}
 
 input[type="text"] {
-  width: 25%;
-  padding: 10px;
+  width: 30%;
+  padding: 15px;
   margin-bottom: 10px;
+  margin-left :10px;
+
 }
 
 button {
