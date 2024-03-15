@@ -178,7 +178,7 @@ button:hover {
 }
 
 .static-article h2 {
-  color: #f0f0f0; /* Less bright white heading color */
+  color: #dddddd; /* Less bright white heading color */
 }
 
 .static-article p {
@@ -194,7 +194,7 @@ button:hover {
   padding: 5px 10px;
   margin-right: 5px;
   background-color: #34c6d3; /* Light blue hashtag background */
-  color: #f0f0f0; /* Less bright white hashtag text color */
+  color: #373737; /* Less bright white hashtag text color */
   border-radius: 3px;
 }
 
@@ -250,4 +250,13 @@ button:hover {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+
+
+#preview-container {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
