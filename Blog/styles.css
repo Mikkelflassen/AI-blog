@@ -1,7 +1,7 @@
 body {
   font-family: 'Oswald', sans-serif;
-  background-color: #2C2A4A;
-  color: #d6cccc;
+  background-color: #1f1f1f; /* Dark background */
+  color: #f0f0f0; /* Less bright white text color */
   font-weight: 300;
   padding: 20px;
 }
@@ -14,18 +14,22 @@ body {
 h1.title {
   text-align: center;
   font-weight: 400;
+  color: #34c6d3; /* Light blue title color */
 }
 
 header {
   padding: 10px;
 }
+
 /* Nav */
 nav {
-  border-bottom: 1px solid #e3dada; /* White line under nav */
+  border-bottom: 1px solid #1c9198; /* Dark gray line under nav */
+
 }
+
 nav ul {
   list-style-type: none;
-  margin: 0;
+  margin: 10;
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -36,63 +40,136 @@ nav ul li {
 }
 
 nav ul li a {
-  color: rgb(216, 210, 210);
+  color: #dddddd; /* Light gray nav link color */
   text-decoration: none;
-  padding: 10px 15px; /* Adjusted padding */
-  font-weight: 300; /* Slimmer font weight for nav links */
+  padding: 10px 15px;
+  font-weight: 300;
 }
 nav ul li a:hover {
-  background-color: #524F73; /* Darker shade on hover */
+  background-color: #333333; /* Dark gray shade on hover */
+  border-radius: 3px; /* Add rounded corners */
 }
 
+nav ul li.active a {
+  color: #1c9198; /* Change the text color */
+  background-color: #333333; /* Change the background color */
+  border-radius: 3px; /* Add rounded corners */
+}
 
 .touch {
-  margin-left: auto; /* Push touch to the right */
+  margin-left: auto;
 }
 
 .search {
-  margin-left: auto; /* Remove margin-right */
+  margin-left: auto;
 }
 
-.text-container{
-  margin-left:10px;
+.text-container {
+  margin-left: 10px;
 }
 
 input[type="text"] {
   width: 30%;
   padding: 15px;
   margin-bottom: 10px;
-  margin-left :10px;
-
+  margin-left: 10px;
 }
 
 button {
   padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #34c6d3; /* Light blue button */
+  color: #f0f0f0; /* Less bright white button text color */
   border: none;
   cursor: pointer;
   font-weight: 300;
 }
-
 button:hover {
-  background-color: #0056b3;
+  background-color: #1c9198; /* Darker blue shade on hover */
 }
 
 #outputContainer {
   padding: 20px;
 }
 
+.bigArticle {
+  text-align: center;
+}
+
+.bigArticle img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  margin-top: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Style for the main article text */
+.bigArticle-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f0f0f0; /* Less bright white text color */
+  margin-top: 20px;
+  max-width: 700px; /* Adjust the maximum width as per your preference */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Style for headings */
+.bigArticle-text h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #34c6d3; /* Light blue heading color */
+
+}
+
+.bigArticle-text h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #f0f0f0; /* Light blue heading color */
+}
+
+/* Style for paragraphs */
+.bigArticle-text p {
+  margin-bottom: 15px;
+}
+
+/* Style for lists */
+.bigArticle-text ul,
+.bigArticle-text ol {
+  margin-bottom: 15px;
+}
+
+.bigArticle-text ul li,
+.bigArticle-text ol li {
+  margin-bottom: 5px;
+}
+
+/* Style for links */
+.bigArticle-text a {
+  color: #34c6d3; /* Light blue link color */
+}
+
+.bigArticle-text a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
 .static-articles-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-  grid-gap: 20px; /* Spacing between articles */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
 .static-article {
-  background-color: #1E1B3A; /* Darker shade for article background */
+  background-color: #282828; /* Dark gray article background */
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.article-link {
+  text-decoration: none;
 }
 
 .static-article img {
@@ -101,11 +178,11 @@ button:hover {
 }
 
 .static-article h2 {
-  color: #cdc8c8;
+  color: #f0f0f0; /* Less bright white heading color */
 }
 
 .static-article p {
-  color: #aaa;
+  color: #dddddd; /* Light gray paragraph text color */
 }
 
 .static-article .hashtags {
@@ -116,45 +193,61 @@ button:hover {
   display: inline-block;
   padding: 5px 10px;
   margin-right: 5px;
-  background-color: #0f4263;
-  color: #d2cbcb;
+  background-color: #34c6d3; /* Light blue hashtag background */
+  color: #f0f0f0; /* Less bright white hashtag text color */
   border-radius: 3px;
-}
-
-.footer {
-  background-color: #141f97; /* Brown background */
-  color: #8a8a8a; /* Text color */
-  text-align: center;
-  padding: 20px 0;
-  margin :20px;
-}
-
-.footer a:hover {
-  text-decoration: underline; /* Add underline on hover */
 }
 
 .generated-articles-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-  grid-gap: 20px; /* Spacing between articles */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
-/* generated articles*/
+/* Generated articles */
+
+/* Generated articles */
 
 .generated-article {
-  background-color: #2f2b54; /* Change background color */
-  border: 0px solid #5e5d5d; /* Add border */
-  color:#6a6a6a ;
-  padding: 10px; /* Add padding */
-  margin-bottom: 20px; /* Add margin */
-  /* Add any other specific styling for the generated articles */
+  background-color: #3a3a3a; /* Darker gray background */
+  border: 0px solid #5e5d5d;
+  color: #aaaaaa; /* Light gray text color */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #34c6d3; /* Light blue title color */
+}
+
+.video-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
-.article-title {
-  /* Add your desired styling properties */
-  font-size: 24px;
-  font-weight: bold;
-  color: #8388c2; /* Example color */
-  /* Add more styles as needed */
+.video-container video:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  background-color: #34c6d3; /* Blue footer background */
+  color: #ffffff; /* White footer text color */
+  text-align: center;
+  padding: 20px 0;
+  margin: 20px;
+  margin-top: 70px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
