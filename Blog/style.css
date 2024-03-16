@@ -123,6 +123,27 @@ button{
     
   }
 
+  textarea.prism-live {
+    font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
+    font-size: 14px; /* Adjust font size as needed */
+    padding: 10px; /* Add padding for better readability */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+/* Style individual language classes */
+textarea.language-html {
+    color: #C41A16; /* HTML color */
+}
+
+textarea.language-css {
+    color: #1F61A5; /* CSS color */
+}
+
+textarea.language-javascript {
+    color: #FF0000; /* JavaScript color */
+}
+
 
 
 .static-articles-container {

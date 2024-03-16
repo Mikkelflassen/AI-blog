@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Live Coding Playground</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/Blog/style.css">
@@ -8,48 +8,43 @@
     <!-- Need prism CSS for highlight code -->
     <link rel="stylesheet" href="./prism/css/prism-tomorrow.css">
     <link rel="stylesheet" href="./prism/css/prism-live.css">
-  </head>
+    <!-- Include Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Tech Student</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li class="active"><a href="programming.html">Programming</a></li>
+                <li><a href="#blockchain">Blockchain</a></li>
+                <li><a href="AI.html">AI</a></li>
+                <li><a href="#search">Search</a></li>
+                <li class="touch"><a href="#touch">Get in Touch</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-    <h1 class="title">Tech Student</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li class="active"><a href="programming.html">Programming</a></li>
-        <li><a href="#blockchain">Blockchain</a></li>
-        <li><a href="AI.html">AI</a></li>
-        <li><a href="#search">Search</a></li>
-        <li class="touch"><a href="#touch">Get in Touch</a></li>
-      </ul>
-    </nav>
-  </header>
-
-
-  <body>
-   
     <div id="coding_playground_outer">
-      <header id="playground_header">
-        <h1>live Coding Playground</h1>
-        
-      </header>
-      <div class="page-wrap twilight">
-        <button id="get-example">Get Example</button>
-        <div class="boxes">
-           
-          <div id="coding_area">
-            <textarea id="notes" placeholder="notes" class="prism-live language"></textarea> 
-            <textarea id="html" placeholder="HTML" class="prism-live language-html"></textarea> 
-            <textarea id="css" placeholder="CSS" class="prism-live language-css"></textarea> 
-            <textarea id="js" placeholder="javascript" class="prism-live language-js"></textarea> 
-          </div>
-          
-          <div id="code_output">
-            <iframe id="code"></iframe>
-          </div>
+        <header id="playground_header">
+            <h1>Live Coding Playground</h1>
+        </header>
+        <div class="page-wrap twilight">
+            <button id="next-example">Next Example</button>
+            <div class="boxes">
+                <div id="coding_area">
+                    <textarea id="notes" placeholder="Description" class="prism-live language"></textarea> 
+                    <textarea id="html" placeholder="HTML" class="prism-live language-html"></textarea> 
+                    <textarea id="css" placeholder="CSS" class="prism-live language-css"></textarea> 
+                    <textarea id="js" placeholder="JavaScript" class="prism-live language-javascript"></textarea>
+                </div>
+                <div id="code_output">
+                    <iframe id="code"></iframe>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
     <segment class="static-articles-container">
         <article class="static-article">
           <img src="images/Ai-Face-Mind-Map.png" alt="Article Image">
@@ -123,23 +118,19 @@
         </article>
       </segment>
 
-
-
-    <footer>
+      <footer>
         <div class="footer">
-          <p>&copy; Mikkelflassen.com - All rights reserved.</p>
+            <p>&copy; Mikkelflassen.com - All rights reserved.</p>
         </div>
-      </footer>
+    </footer>
 
-
-    
-    <script type="text/javascript" src="/Blog/programming.js"></script>
-    <!-- Need prism js for highlight code -->
     <script type="text/javascript" src="./prism/js/prism.js"></script>
     <script type="text/javascript" src="./prism/js/prism-live.js"></script>
     <script src="scripts-code.js"></script>
-
-
-    
-  </body>
+    <!-- Include Prism.js language extensions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
 </html>
