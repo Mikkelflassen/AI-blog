@@ -1,7 +1,7 @@
 body {
     font-family: 'Oswald', sans-serif;
-    background-color: #1f1f1f; /* Dark background */
-    color: #f0f0f0; /* Less bright white text color */
+    background-color: #0f0f0f; /* Dark background */
+    color: #774e24; /* Less bright white text color */
     font-weight: 300;
     padding: 20px;
   }
@@ -14,7 +14,7 @@ body {
   h1.title {
     text-align: center;
     font-weight: 400;
-    color: #34c6d3; /* Light blue title color */
+    color: #774e24; /* Light blue title color */
   }
   
   header {
@@ -23,7 +23,7 @@ body {
   
   /* Nav */
   nav {
-    border-bottom: 1px solid #1c9198; /* Dark gray line under nav */
+    border-bottom: 1px solid #6e0d25; /* Dark gray line under nav */
   
   }
   
@@ -40,19 +40,19 @@ body {
   }
   
   nav ul li a {
-    color: #dddddd; /* Light gray nav link color */
+    color: #dcab6a; /* Light gray nav link color */
     text-decoration: none;
     padding: 10px 15px;
     font-weight: 300;
   }
   nav ul li a:hover {
-    background-color: #333333; /* Dark gray shade on hover */
+    background-color: #774e24; /* Dark gray shade on hover */
     border-radius: 3px; /* Add rounded corners */
   }
   
   nav ul li.active a {
-    color: #1c9198; /* Change the text color */
-    background-color: #333333; /* Change the background color */
+    
+    background-color: #774e24; /* Change the background color */
     border-radius: 3px; /* Add rounded corners */
   }
   
@@ -76,7 +76,7 @@ body {
   header#playground_header > h1 {
     padding: 0;
     text-align: center;
-    color: #34c6d3;
+    color: #774e24;
     font-weight: 700;
  
     display: flex;
@@ -99,11 +99,15 @@ body {
     width: 100%;
     height: 30vh;
     border: unset;
-    background: #b0b2b4;
+    background: #774e24;
     margin: 10px;
   }
 button{
     margin-left:10px;
+    background:#6e0d25;
+    color:#0f0f0f;
+    font-size: 20px;
+    padding:7px;
 }
 
   .prism-live {
@@ -111,7 +115,7 @@ button{
     overflow-x: hidden;
     width: 100%;
     margin: 10px;
-    background: #b0b2b4;
+    background: #774e24;
   }
   
   div#coding_area {
@@ -119,29 +123,29 @@ button{
     height: calc(60vh - 60px);
     min-height: 125px;
     display: flex;
-    overflow: hidden;
+   
     
   }
 
   textarea.prism-live {
     font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
-    font-size: 14px; /* Adjust font size as needed */
+    font-size: 16px; /* Adjust font size as needed */
     padding: 10px; /* Add padding for better readability */
-    border: 1px solid #ccc; /* Add border */
+    border: 1px solid #d7c9aa; /* Add border */
     border-radius: 5px; /* Add border radius for rounded corners */
 }
 
 /* Style individual language classes */
 textarea.language-html {
-    color: #C41A16; /* HTML color */
+    color: #d7c9aa; /* HTML color */
 }
 
 textarea.language-css {
-    color: #1F61A5; /* CSS color */
+    color: #d7c9aa; /* CSS color */
 }
 
 textarea.language-javascript {
-    color: #FF0000; /* JavaScript color */
+    color: #d7c9aa; /* JavaScript color */
 }
 
 
