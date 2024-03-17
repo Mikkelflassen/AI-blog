@@ -232,37 +232,7 @@ form.addEventListener('submit', function(event) {
     });`
   },
 
-  {
-    description: "Animated Typing Effect",
-    html: `<div id="typing-effect"></div>`,
-    css: `#typing-effect {
-      font-family: monospace;
-      overflow: hidden;
-      border-right: .15em solid orange;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .15em;
-      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: orange }
-    }`,
-    js: `const text = "Welcome to our website!";
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("typing-effect").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 150);
-      }
-    }
-    typeWriter();`
-  },
+  
 
   {
     description: "Tooltip on Hover",
@@ -282,21 +252,22 @@ form.addEventListener('submit', function(event) {
       color: white;
       text-align: center;
       border-radius: 6px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      margin-left: -60px;
+      padding: 8px 0;
+      
       opacity: 0;
       transition: opacity 0.3s;
     }
     .tooltip:hover .tooltiptext {
       visibility: visible;
       opacity: 1;
+    }
+    .tooltip:hover {
+      border-bottom: 1px dotted transparent; /* Hide the border on hover */
     }`,
     js: `// No JavaScript needed for basic tooltip functionality`
   },
+  
+  
   {
     description: "Animated Loading Spinner",
     html: `<div class="spinner"></div>`,
