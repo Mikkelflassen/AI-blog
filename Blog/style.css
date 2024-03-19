@@ -99,7 +99,7 @@ body {
   iframe#code {
     bottom: 0;
     position: relative;
-    width: 100%;
+    width: 98.5%;
     height: 30vh;
     border: unset;
     background: #774e24;
@@ -107,6 +107,8 @@ body {
     border: 2px solid #6e0d25; /* Add border */
     border-radius: 10px; /* Add border radius for rounded corners */
     margin-bottom: 50px;
+    
+    
   }
 button{
     margin-left:10px;
@@ -124,6 +126,7 @@ button{
     width: 100%;
     margin: 10px;
     background: #774e24;
+  
     
   }
   
@@ -132,6 +135,7 @@ button{
     height: calc(60vh - 60px);
     min-height: 125px;
     display: flex;
+    
   }
 
   #notes {
@@ -151,6 +155,7 @@ button{
     padding: 10px; /* Add padding for better readability */
     border: 2px solid #6e0d25; /* Add border */
     border-radius: 10px; /* Add border radius for rounded corners */
+
 }
 
 /* Style individual language classes */
@@ -186,9 +191,24 @@ textarea.language-javascript {
     text-decoration: none;
   }
   
-  .static-article img {
+  .static-a.rticle img {
     max-width: 100%;
     height: auto;
+    max-height: 200px;
+  }
+
+  .static-article img {
+    width: 100%; /* Set the width of the container to 100% */
+    max-width: 410px; /* Set the maximum width of the container */
+    height: 280px; /* Set the height of the container */
+    overflow: hidden; /* Hide any content that overflows the container */
+   
+  }
+  
+  .cropped-image {
+    width: 100%; /* Make the image fill the container horizontally */
+    height: 100%; /* Make the image fill the container vertically */
+    object-fit: cover; /* Crop the image to cover the entire container */
   }
   
   .static-article h2 {
@@ -219,10 +239,10 @@ textarea.language-javascript {
 
 
   .footer {
-    background-color: #34c6d3; /* Blue footer background */
-    color: #ffffff; /* White footer text color */
+    background-color: #6e0d25; /* Blue footer background */
+    color: #d7c9aa; /* White footer text color */
     text-align: center;
     padding: 20px 0;
-    margin: 20px;
-    margin-top: 70px;
+    margin: 10px;
+    margin-top: 30px;
   }
