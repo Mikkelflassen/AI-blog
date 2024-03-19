@@ -22,7 +22,7 @@ const examples = [
 }`,
     js: `document.querySelector('.hover-button').addEventListener('mouseover', function() {
   alert('Hovered!');
-});`
+});`,
   },
   {
     description: "Input field with validation",
@@ -43,7 +43,7 @@ const examples = [
   if (this.value.length > 10) {
     alert('Text cant be more than 10 characters long!');
   }
-});`
+});`,
   },
   {
     description: "Dropdown menu",
@@ -96,9 +96,9 @@ document.addEventListener('click', function(event) {
     const dropdownContent = document.querySelector('.dropdown-content');
     dropdownContent.style.display = 'none';
   }
-});`
+});`,
   },
-  
+
   {
     description: "Accordion",
     html: `<div class="accordion">
@@ -153,9 +153,9 @@ accordionBtns.forEach(btn => {
       content.style.display = 'block';
     }
   });
-});`
+});`,
   },
-  
+
   {
     description: "Form with validation",
     html: `<form id="myForm">
@@ -183,7 +183,7 @@ form.addEventListener('submit', function(event) {
     alert('Username and password are required!');
     event.preventDefault(); // Prevent form submission
   }
-});`
+});`,
   },
   {
     description: "Modal Popup",
@@ -229,10 +229,8 @@ form.addEventListener('submit', function(event) {
     });
     document.querySelector('.close').addEventListener('click', function() {
       document.getElementById('myModal').style.display = 'none';
-    });`
+    });`,
   },
-
-  
 
   {
     description: "Tooltip on Hover",
@@ -264,10 +262,9 @@ form.addEventListener('submit', function(event) {
     .tooltip:hover {
       border-bottom: 1px dotted transparent; /* Hide the border on hover */
     }`,
-    js: `// No JavaScript needed for basic tooltip functionality`
+    js: `// No JavaScript needed for basic tooltip functionality`,
   },
-  
-  
+
   {
     description: "Animated Loading Spinner",
     html: `<div class="spinner"></div>`,
@@ -285,14 +282,9 @@ form.addEventListener('submit', function(event) {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }`,
-    js: `// No JavaScript needed for basic loading spinner functionality`
-  }
-
-
-
-
+    js: `// No JavaScript needed for basic loading spinner functionality`,
+  },
 ];
-
 
 // Initialize index to track current example
 let currentIndex = 0;
@@ -300,15 +292,15 @@ let currentIndex = 0;
 // Display the current example
 function displayExample() {
   const example = examples[currentIndex];
-  document.getElementById('notes').value = example.description; // Change to value
-  document.getElementById('html').value = example.html; // Change to value
-  document.getElementById('css').value = example.css; // Change to value
-  document.getElementById('js').value = example.js; // Change to value
+  document.getElementById("notes").value = example.description; // Change to value
+  document.getElementById("html").value = example.html; // Change to value
+  document.getElementById("css").value = example.css; // Change to value
+  document.getElementById("js").value = example.js; // Change to value
   compile();
 }
 
 // Event listener for the "Next Example" button
-document.getElementById('next-example').addEventListener('click', function() {
+document.getElementById("next-example").addEventListener("click", function () {
   currentIndex = (currentIndex + 1) % examples.length; // Cycle through examples
   displayExample();
 });
@@ -323,11 +315,13 @@ function compile() {
   var js = document.getElementById("js").value;
   var code = document.getElementById("code").contentWindow.document;
   code.open();
-  code.writeln(html + "<style>" + css + "</style>" + "<script>" + js + "</script>");
+  code.writeln(
+    html + "<style>" + css + "</style>" + "<script>" + js + "</script>"
+  );
   code.close();
 }
 
 // Event listeners for input on textareas to trigger compilation
-document.getElementById('html').addEventListener('input', compile);
-document.getElementById('css').addEventListener('input', compile);
-document.getElementById('js').addEventListener('input', compile);
+document.getElementById("html").addEventListener("input", compile);
+document.getElementById("css").addEventListener("input", compile);
+document.getElementById("js").addEventListener("input", compile);

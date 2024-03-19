@@ -1,45 +1,51 @@
-document.getElementById('contentForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  const promptText = document.getElementById('prompt').value.trim();
-  
-  fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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'
-    },
-    body: JSON.stringify({
-      model: "gpt-3.5-turbo",
-      messages: [
-        {"role": "system", "content": "OpenAI's text generation models provide text outputs in response to their inputs."},
-        {"role": "user", "content": promptText}
-      ]
+document
+  .getElementById("contentForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const promptText = document.getElementById("prompt").value.trim();
+
+    fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer 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",
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            role: "system",
+            content:
+              "OpenAI's text generation models provide text outputs in response to their inputs.",
+          },
+          { role: "user", content: promptText },
+        ],
+      }),
     })
-  })
-  .then(response => response.json())
-  .then(data => {
-    const outputContainer = document.getElementById('outputContainer');
-    const article = formatArticle(data.choices);
-    outputContainer.innerHTML = article;
+      .then((response) => response.json())
+      .then((data) => {
+        const outputContainer = document.getElementById("outputContainer");
+        const article = formatArticle(data.choices);
+        outputContainer.innerHTML = article;
 
-   // Save the new article to local storage
-const newArticle = generateNewArticle(data.choices, promptText);
-saveArticleToStorage(newArticle);
+        // Save the new article to local storage
+        const newArticle = generateNewArticle(data.choices, promptText);
+        saveArticleToStorage(newArticle);
 
-
-    // Schedule displaying saved articles after 5 seconds
-    setTimeout(() => {
-      displaySavedArticles();
-    }, 1000);
-  })
-  .catch(error => console.error('Error:', error));
-});
+        // Schedule displaying saved articles after 5 seconds
+        setTimeout(() => {
+          displaySavedArticles();
+        }, 1000);
+      })
+      .catch((error) => console.error("Error:", error));
+  });
 
 function formatArticle(choices) {
-  let formattedContent = '';
-  choices.forEach(choice => {
-    if (choice.message.role === 'assistant') {
+  let formattedContent = "";
+  choices.forEach((choice) => {
+    if (choice.message.role === "assistant") {
       formattedContent += formatParagraph(choice.message.content);
     }
   });
@@ -47,53 +53,50 @@ function formatArticle(choices) {
 }
 
 function formatParagraph(content) {
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   let paragraph = '<div class="paragraph">';
-  lines.forEach(line => {
-    if (line.trim() !== '') {
-      if (line.startsWith('- ')) {
+  lines.forEach((line) => {
+    if (line.trim() !== "") {
+      if (line.startsWith("- ")) {
         paragraph += `<ul><li>${line.substring(2)}</li></ul>`;
       } else {
         paragraph += `<p>${line}</p>`;
       }
     }
   });
-  paragraph += '</div>';
+  paragraph += "</div>";
   return paragraph;
 }
 
 function generateNewArticle(choices, promptText) {
   let newArticle = `<h3 class="article-title">${promptText}</h3>`; // Use class "article-title" for styling
-  choices.forEach(choice => {
-    if (choice.message.role === 'assistant') {
+  choices.forEach((choice) => {
+    if (choice.message.role === "assistant") {
       newArticle += formatParagraph(choice.message.content);
     }
   });
   return newArticle;
 }
 
-
-
-
 function saveArticleToStorage(article) {
- /*Keyword*/
+  /*Keyword*/
   const keywords = [
-    "technology", 
-    "artificial intelligence", 
-    "machine learning", 
-    "students", 
-    "tech", 
-    "AI", 
-    "programming", 
-    "javascript", 
-    "HTML", 
-    "css", 
-    "php", 
-    "java", 
-    "TypeScript", 
-    "chatgpt", 
-    "student-help", 
-    "textcorrector", 
+    "technology",
+    "artificial intelligence",
+    "machine learning",
+    "students",
+    "tech",
+    "AI",
+    "programming",
+    "javascript",
+    "HTML",
+    "css",
+    "php",
+    "java",
+    "TypeScript",
+    "chatgpt",
+    "student-help",
+    "textcorrector",
     "grammar",
     "code",
     "learning",
@@ -355,11 +358,14 @@ function saveArticleToStorage(article) {
     "psycholinguistics",
     "neurolinguistics",
     "corpus linguistics",
-    "text linguistics"];  
-  const containsKeyword = keywords.some(keyword => article.toLowerCase().includes(keyword.toLowerCase()));
+    "text linguistics",
+  ];
+  const containsKeyword = keywords.some((keyword) =>
+    article.toLowerCase().includes(keyword.toLowerCase())
+  );
   if (containsKeyword) {
     // Retrieve existing articles from local storage or initialize an empty array
-    const existingArticles = JSON.parse(localStorage.getItem('articles')) || [];
+    const existingArticles = JSON.parse(localStorage.getItem("articles")) || [];
     // Add the new article to the array
     existingArticles.push(article);
     // Limit the articles to 25 by removing the oldest ones
@@ -367,27 +373,26 @@ function saveArticleToStorage(article) {
       existingArticles.shift(); // Remove the oldest article
     }
     // Store the updated array back in local storage
-    localStorage.setItem('articles', JSON.stringify(existingArticles));
+    localStorage.setItem("articles", JSON.stringify(existingArticles));
   }
 }
 
-
-
 function displaySavedArticles() {
-  const articleContainer = document.querySelector('.generated-articles-container');
-  const savedArticles = JSON.parse(localStorage.getItem('articles')) || [];
-  
+  const articleContainer = document.querySelector(
+    ".generated-articles-container"
+  );
+  const savedArticles = JSON.parse(localStorage.getItem("articles")) || [];
+
   // Clear the existing articles from the container
-  articleContainer.innerHTML = '';
+  articleContainer.innerHTML = "";
 
   // Display the newest articles first by iterating backwards through the savedArticles array
   for (let i = savedArticles.length - 1; i >= 0; i--) {
-    const newArticleDiv = document.createElement('div');
-    newArticleDiv.classList.add('generated-article'); // Add a class for generated articles
-    newArticleDiv.innerHTML = `
-      
-      <p>${savedArticles[i]}</p>
-    `;
+    const newArticleDiv = document.createElement("div");
+    newArticleDiv.classList.add("generated-article"); // Add a class for generated articles
+
+    newArticleDiv.innerHTML = ` <p>${savedArticles[i]}</p>`;
+
     articleContainer.appendChild(newArticleDiv);
   }
 }

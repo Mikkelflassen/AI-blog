@@ -1,5 +1,5 @@
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   background-color: #1f1f1f; /* Dark background */
   color: #f0f0f0; /* Less bright white text color */
   font-weight: 300;
@@ -24,7 +24,6 @@ header {
 /* Nav */
 nav {
   border-bottom: 1px solid #1c9198; /* Dark gray line under nav */
-
 }
 
 nav ul {
@@ -103,10 +102,9 @@ button:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Style for the main article text */
 .bigArticle-text {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #f0f0f0; /* Less bright white text color */
@@ -121,7 +119,6 @@ button:hover {
   font-weight: bold;
   margin-bottom: 15px;
   color: #34c6d3; /* Light blue heading color */
-
 }
 
 .bigArticle-text h3 {
@@ -234,7 +231,6 @@ button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 .video-container video:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -251,8 +247,6 @@ button:hover {
 .footer a:hover {
   text-decoration: underline;
 }
-
-
 
 #preview-container {
   width: 100%;
