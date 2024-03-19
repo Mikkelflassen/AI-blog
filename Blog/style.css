@@ -227,13 +227,83 @@ textarea.language-javascript {
   padding: 5px 10px;
   margin-right: 5px;
   background-color: #6e0d25; /* Light blue hashtag background */
-  color: #d7c9aa; /* Less bright white hashtag text color */
+  color: #dcab6a; /* Less bright white hashtag text color */
   border-radius: 3px;
 }
 
 
+/* big Articles */
 
 
+
+.bigArticle img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  margin-top: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the main article text */
+.bigArticle-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #774e24; /* Less bright white text color */
+  margin-top: 20px;
+  max-width: 700px; /* Adjust the maximum width as per your preference */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Style for headings */
+.bigArticle-text h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #774e24; /* Light blue heading color */
+
+}
+
+
+
+/* Style for paragraphs */
+.bigArticle-text p {
+  margin-bottom: 15px;
+  color: #dcab6a;
+}
+
+/* Style for lists */
+.bigArticle-text ul,
+.bigArticle-text ol {
+  margin-bottom: 15px;
+}
+
+.bigArticle-text ul li,
+.bigArticle-text ol li {
+  margin-bottom: 5px;
+}
+
+/* Style for links */
+.bigArticle-text a {
+  color: #34c6d3; /* Light blue link color */
+}
+
+.bigArticle-text a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
+
+.video-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 
 
