@@ -176,10 +176,11 @@ textarea.language-javascript {
   }
   
   .static-article {
-    background-color: #282828; /* Dark gray article background */
+    background-color: #774e24; /* Dark gray article background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
   }
   .article-link {
     text-decoration: none;
@@ -191,11 +192,11 @@ textarea.language-javascript {
   }
   
   .static-article h2 {
-    color: #dddddd; /* Less bright white heading color */
+    color: #d7c9aa; /* Less bright white heading color */
   }
   
   .static-article p {
-    color: #dddddd; /* Light gray paragraph text color */
+    color: #d7c9aa; /* Light gray paragraph text color */
   }
   
   .static-article .hashtags {
@@ -205,8 +206,8 @@ textarea.language-javascript {
   display: inline-block;
   padding: 5px 10px;
   margin-right: 5px;
-  background-color: #34c6d3; /* Light blue hashtag background */
-  color: #373737; /* Less bright white hashtag text color */
+  background-color: #6e0d25; /* Light blue hashtag background */
+  color: #d7c9aa; /* Less bright white hashtag text color */
   border-radius: 3px;
 }
 
