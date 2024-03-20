@@ -78,7 +78,7 @@ button {
   padding: 5px 10px;
   background-color: #34c6d3; /* Light blue button */
   color: #f0f0f0; /* Less bright white button text color */
-  border: none;
+  border: 3px solid #1f1f1f;
   cursor: pointer;
   font-weight: 300;
 }
