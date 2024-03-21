@@ -10,7 +10,7 @@ document
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer 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",
+          "Bearer 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",
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
