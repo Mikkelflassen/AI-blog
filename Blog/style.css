@@ -237,8 +237,13 @@ textarea.language-javascript {
   color: #dcab6a;
 }
 
-.newsletter-form {
+#subscribe-form {
   color: #d7c9aa;
+  text-align: center;
+  padding: 1px;
+  margin: 15px;
+}
+#message {
   text-align: center;
   padding: 1px;
   margin: 15px;

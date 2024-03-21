@@ -23,6 +23,7 @@
           <li class="active"><a href="programming.html">Programming</a></li>
           <li><a href="#design">Design</a></li>
           <li><a href="AI.html">AI</a></li>
+          <li><a href="#Forum">Forum</a></li>
           <li><a href="#search">Search</a></li>
           <li class="touch"><a href="#touch">Get in Touch</a></li>
         </ul>
@@ -177,21 +178,19 @@
       </article>
     </segment>
 
-    <form action="#" method="post" class="newsletter-form">
+    <form id="subscribe-form">
       <h2>Subscribe to Our Newsletter</h2>
       <p>Stay up to date with the latest news, updates, and special offers!</p>
-
       <label for="email">Email:</label>
       <input
         type="email"
         id="email"
         name="email"
         placeholder="Your email address"
-        required
       />
-
-      <button type="submit">Subscribe</button>
+      <button type="button" id="subscribe-button">Subscribe</button>
     </form>
+    <div id="message" style="display: flex"></div>
 
     <footer>
       <p>&copy; Mikkelflassen.com - All rights reserved.</p>
@@ -200,6 +199,7 @@
     <script type="text/javascript" src="./prism/js/prism.js"></script>
     <script type="text/javascript" src="./prism/js/prism-live.js"></script>
     <script src="scripts-code.js"></script>
+    <script src="subscribing.js"></script>
     <!-- Include Prism.js language extensions -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-html.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-css.min.js"></script>
