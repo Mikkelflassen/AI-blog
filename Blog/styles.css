@@ -93,7 +93,7 @@ button:hover {
 
 #errorMessage {
   display: none;
-  color: red;
+  color: rgb(179, 8, 8);
   margin-top: -20px;
   margin-bottom: 20px;
 }
