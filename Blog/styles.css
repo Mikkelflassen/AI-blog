@@ -91,6 +91,13 @@ button:hover {
   padding: 20px;
 }
 
+#errorMessage {
+  display: none;
+  color: red;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
 .bigArticle {
   text-align: center;
 }

@@ -34,12 +34,14 @@ document
         const newArticle = generateNewArticle(data.choices, promptText);
         saveArticleToStorage(newArticle);
 
-        // Schedule displaying saved articles after 5 seconds
-        setTimeout(() => {
-          displaySavedArticles();
-        }, 1000);
+        // Display the generated article immediately
+        displaySavedArticles();
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+        console.error("Error:", error);
+        // Show error message
+        document.getElementById("errorMessage").style.display = "block";
+      });
   });
 
 function formatArticle(choices) {
