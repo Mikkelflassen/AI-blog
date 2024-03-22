@@ -9,8 +9,7 @@ document
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer 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",
+        Authorization: "Bearer API_key",
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
